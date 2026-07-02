@@ -1,0 +1,41 @@
+Article ID,Article Title,Pillar,Pillar Category,Student Category,Teacher Category,Professional Category,Parent Category,Senior Citizen Category,Small Business Category
+L001,What is Artificial Intelligence (AI)?,Learn AI,AI Basics,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L002,What is Generative AI?,Learn AI,AI Basics,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L003,What is Machine Learning?,Learn AI,AI Basics,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L004,What are Large Language Models (LLMs)?,Learn AI,AI Concepts & Terminology,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L005,What is ChatGPT?,Learn AI,AI Tools,AI Tools for Students,AI Teaching Tools,AI Productivity Tools,Learn AI Foundations,Everyday AI,AI Business Tools
+L006,What are AI Agents?,Learn AI,AI Concepts & Terminology,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L007,What is Prompt Engineering?,Learn AI,Prompt Engineering,AI Tools for Students,AI Teaching Tools,AI Productivity Tools,Learn AI Foundations,Everyday AI,AI Business Tools
+L008,How Does AI Work?,Learn AI,AI Basics,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L009,History of Artificial Intelligence,Learn AI,AI Concepts & Terminology,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+L010,AI Terminology Explained,Learn AI,AI Concepts & Terminology,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Foundations,Learn AI Basics,Learn AI Foundations
+U001,How Students Can Use AI Effectively,Use AI,Study Better,Study Smarter with AI,,,,,
+U002,How Teachers Can Use AI in Education,Use AI,Study Better,,Teach with AI,,,,
+U003,How Professionals Can Use AI at Work,Use AI,Work Smarter,,,Work Smarter with AI,,,
+U004,How Small Businesses Can Use AI,Use AI,Work Smarter,,,,,,Grow Your Business
+U005,Beginner's Guide to ChatGPT,Use AI,Create Content,AI Tools for Students,AI Teaching Tools,AI Productivity Tools,Learn AI Foundations,Everyday AI,AI Business Tools
+U006,Beginner's Guide to Gemini,Use AI,Create Content,AI Tools for Students,AI Teaching Tools,AI Productivity Tools,Learn AI Foundations,Everyday AI,AI Business Tools
+U007,Beginner's Guide to Claude,Use AI,Create Content,,AI Teaching Tools,AI Productivity Tools,,,AI Business Tools
+U008,Beginner's Guide to NotebookLM,Use AI,Study Better,Study Smarter with AI,AI Teaching Tools,,,,
+U009,AI for Everyday Productivity,Use AI,Everyday Life,,,Work Smarter with AI,,Everyday AI,Grow Your Business
+U010,Best AI Tools for Beginners,Use AI,Create Content,AI Tools for Students,AI Teaching Tools,AI Productivity Tools,Learn AI Foundations,Everyday AI,AI Business Tools
+S001,AI Safety for Beginners,Stay Safe,Responsible AI,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S002,Understanding Deepfakes,Stay Safe,Deepfakes,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S003,Common AI Scams and How to Avoid Them,Stay Safe,AI Scams,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S004,Protecting Children in the AI Era,Stay Safe,Privacy & Security,,,,Safe AI for Families,,
+S005,AI and Data Privacy,Stay Safe,Privacy & Security,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S006,Safe Prompting Practices,Stay Safe,Responsible AI,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S007,AI Misinformation Explained,Stay Safe,Responsible AI,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S008,Avoiding AI-Enabled Fraud,Stay Safe,AI Scams,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S009,Responsible AI Usage,Stay Safe,Responsible AI,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+S010,AI Ethics Simplified,Stay Safe,Responsible AI,AI Safety for Students,Safe AI for Classrooms,Secure AI at Work,Safe AI for Families,Stay Safe Online,Safe AI for Business
+G001,AI Skills Every Student Should Learn,Grow with AI,Future Skills,Future Careers,,,,,
+G002,AI Skills for Professionals,Grow with AI,Future Skills,,,Career Growth,,,
+G003,AI Career Paths Explained,Grow with AI,AI Careers,Future Careers,Future of Education,Career Growth,Future Ready Parenting,Digital Confidence,Grow Your Business
+G004,Top AI Certifications,Grow with AI,AI Careers,,,Career Growth,,,
+G005,Building a Business with AI,Grow with AI,Entrepreneurship,,,,,,Grow Your Business
+G006,Future of Work in the AI Era,Grow with AI,Productivity,,Future of Education,Career Growth,,,Grow Your Business
+G007,AI Freelancing Opportunities,Grow with AI,Entrepreneurship,,,Career Growth,,,Grow Your Business
+G008,AI for Business Growth,Grow with AI,Entrepreneurship,,,,,,Grow Your Business
+G009,AI Careers for Students,Grow with AI,AI Careers,Future Careers,,,,,
+G010,How to Stay Relevant in an AI-Driven World,Grow with AI,Future Skills,Future Careers,Future of Education,Career Growth,Future Ready Parenting,Digital Confidence,Grow Your Business

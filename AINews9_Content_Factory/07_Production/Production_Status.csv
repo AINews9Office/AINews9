@@ -1,0 +1,47 @@
+﻿ID,Title,Primary Persona,Secondary Personas
+L001,What is AI?,All,"Students, Teachers, Parents, Professionals, Senior Citizens, Small Business"
+L002,What is Generative AI?,All,All Personas
+L003,What is Machine Learning?,All,All Personas
+L004,What are LLMs?,All,All Personas
+L005,What is ChatGPT?,All,All Personas
+L006,What are AI Agents?,All,All Personas
+L007,What is Prompt Engineering?,Professionals,"Students, Teachers, Small Business"
+L008,How Does AI Work?,All,All Personas
+L009,History of AI,Students,"Teachers, Professionals"
+L010,AI Terminology Explained,Beginners,All Personas
+,,,
+ID,,Primary Persona,Secondary Personas
+U001,,Students,"Parents, Teachers"
+U002,,Teachers,"Students, School Administrators"
+U003,,Professionals,"Managers, Entrepreneurs"
+U004,,Small Business,"Entrepreneurs, Professionals"
+U005,,All,Everyone
+U006,,All,Everyone
+U007,,All,Everyone
+U008,,All,"Students, Researchers, Professionals"
+U009,,All,"Professionals, Students, Teachers"
+U010,,All,Everyone
+,,,
+ID,,Primary Persona,Secondary Personas
+S001,,All,Everyone
+S002,,Parents,"Students, Senior Citizens"
+S003,,All,Everyone
+S004,,Parents,"Teachers, Students"
+S005,,Professionals,Small Business
+S006,,All,Everyone
+S007,,All,Everyone
+S008,,Senior Citizens,Parents
+S009,,All,Everyone
+S010,,All,Everyone
+,,,
+ID,,Primary Persona,Secondary Personas
+G001,,Students,"Parents, Teachers"
+G002,,Professionals,Managers
+G003,,All,"Students, Professionals"
+G004,,All,"Students, Professionals"
+G005,,Entrepreneurs,Small Business
+G006,,Professionals,Students
+G007,,All,"Students, Professionals"
+G008,,Small Business,Entrepreneurs
+G009,,Students,Parents
+G010,,All,Everyone

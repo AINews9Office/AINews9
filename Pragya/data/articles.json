@@ -1,0 +1,329 @@
+[
+  {
+    "id": "L001",
+    "title": "What is Artificial Intelligence (AI)?",
+    "pillar": "Learn AI",
+    "category": "AI Basics",
+    "difficulty": "Beginner",
+    "reading_time": "5 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "ai",
+      "artificial intelligence",
+      "what is ai",
+      "introduction to ai"
+    ],
+    "next": "L002"
+  },
+  {
+    "id": "L002",
+    "title": "What is Generative AI?",
+    "pillar": "Learn AI",
+    "category": "AI Basics",
+    "difficulty": "Beginner",
+    "reading_time": "6 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "generative ai",
+      "gen ai",
+      "create images",
+      "chatgpt"
+    ],
+    "next": "L003"
+  },
+  {
+    "id": "L003",
+    "title": "What is Machine Learning?",
+    "pillar": "Learn AI",
+    "category": "AI Basics",
+    "difficulty": "Beginner",
+    "reading_time": "7 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "machine learning",
+      "ml",
+      "learning algorithm"
+    ],
+    "next": "L004"
+  },
+  {
+    "id": "L004",
+    "title": "What are Large Language Models (LLMs)?",
+    "pillar": "Learn AI",
+    "category": "AI Concepts",
+    "difficulty": "Beginner",
+    "reading_time": "7 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "llm",
+      "large language model",
+      "gpt"
+    ],
+    "next": "L005"
+  },
+  {
+    "id": "L005",
+    "title": "What is ChatGPT?",
+    "pillar": "Learn AI",
+    "category": "AI Tools",
+    "difficulty": "Beginner",
+    "reading_time": "6 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "chatgpt",
+      "gpt",
+      "openai"
+    ],
+    "next": "L006"
+  },
+  {
+    "id": "L006",
+    "title": "What are AI Agents?",
+    "pillar": "Learn AI",
+    "category": "AI Concepts",
+    "difficulty": "Beginner",
+    "reading_time": "6 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "agent",
+      "ai agent",
+      "automation"
+    ],
+    "next": "L007"
+  },
+  {
+    "id": "L007",
+    "title": "What is Prompt Engineering?",
+    "pillar": "Learn AI",
+    "category": "Prompt Engineering",
+    "difficulty": "Beginner",
+    "reading_time": "8 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "prompt",
+      "prompt engineering",
+      "better prompts"
+    ],
+    "next": "L008"
+  },
+  {
+    "id": "L008",
+    "title": "How Does AI Work?",
+    "pillar": "Learn AI",
+    "category": "AI Basics",
+    "difficulty": "Beginner",
+    "reading_time": "7 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "how ai works",
+      "ai working"
+    ],
+    "next": "L009"
+  },
+  {
+    "id": "L009",
+    "title": "History of Artificial Intelligence",
+    "pillar": "Learn AI",
+    "category": "AI Concepts",
+    "difficulty": "Beginner",
+    "reading_time": "7 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "history",
+      "history of ai"
+    ],
+    "next": "L010"
+  },
+  {
+    "id": "L010",
+    "title": "AI Terminology Explained",
+    "pillar": "Learn AI",
+    "category": "AI Concepts",
+    "difficulty": "Beginner",
+    "reading_time": "6 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "ai terms",
+      "glossary",
+      "terminology"
+    ],
+    "next": "U001"
+  },
+  {
+    "id": "U001",
+    "title": "How Students Can Use AI Effectively",
+    "pillar": "Use AI",
+    "category": "Study Better",
+    "difficulty": "Beginner",
+    "reading_time": "10 min",
+    "personas": [
+      "Student"
+    ],
+    "keywords": [
+      "student",
+      "study",
+      "homework"
+    ],
+    "next": "S001"
+  },
+  {
+    "id": "U002",
+    "title": "How Teachers Can Use AI in Education",
+    "pillar": "Use AI",
+    "category": "Teaching",
+    "difficulty": "Beginner",
+    "reading_time": "10 min",
+    "personas": [
+      "Teacher"
+    ],
+    "keywords": [
+      "teacher",
+      "education",
+      "lesson planning"
+    ],
+    "next": "S001"
+  },
+  {
+    "id": "U003",
+    "title": "How Professionals Can Use AI at Work",
+    "pillar": "Use AI",
+    "category": "Productivity",
+    "difficulty": "Beginner",
+    "reading_time": "10 min",
+    "personas": [
+      "Professional"
+    ],
+    "keywords": [
+      "office",
+      "career",
+      "productivity"
+    ],
+    "next": "U005"
+  },
+  {
+    "id": "U004",
+    "title": "How Small Businesses Can Use AI",
+    "pillar": "Use AI",
+    "category": "Business",
+    "difficulty": "Beginner",
+    "reading_time": "10 min",
+    "personas": [
+      "Small Business"
+    ],
+    "keywords": [
+      "business",
+      "marketing",
+      "automation"
+    ],
+    "next": "G008"
+  },
+  {
+    "id": "S001",
+    "title": "AI Safety for Beginners",
+    "pillar": "Stay Safe",
+    "category": "Safety",
+    "difficulty": "Beginner",
+    "reading_time": "8 min",
+    "personas": [
+      "Student",
+      "Teacher",
+      "Professional",
+      "Parent",
+      "Senior Citizen",
+      "Small Business"
+    ],
+    "keywords": [
+      "safe ai",
+      "privacy",
+      "security"
+    ],
+    "next": "S005"
+  },
+  {
+    "id": "G001",
+    "title": "AI Skills Every Student Should Learn",
+    "pillar": "Grow with AI",
+    "category": "Career",
+    "difficulty": "Beginner",
+    "reading_time": "8 min",
+    "personas": [
+      "Student"
+    ],
+    "keywords": [
+      "career",
+      "future",
+      "skills"
+    ],
+    "next": "G010"
+  }
+]

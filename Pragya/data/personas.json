@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Student",
+        "keywords": [
+            "student",
+            "school",
+            "college",
+            "exam",
+            "study",
+            "learning"
+        ]
+    },
+    {
+        "name": "Teacher",
+        "keywords": [
+            "teacher",
+            "faculty",
+            "professor",
+            "educator"
+        ]
+    },
+    {
+        "name": "Professional",
+        "keywords": [
+            "professional",
+            "employee",
+            "software engineer",
+            "developer",
+            "manager",
+            "job",
+            "office"
+        ]
+    },
+    {
+        "name": "Parent",
+        "keywords": [
+            "parent",
+            "father",
+            "mother",
+            "son",
+            "daughter",
+            "kids",
+            "child"
+        ]
+    },
+    {
+        "name": "Senior Citizen",
+        "keywords": [
+            "retired",
+            "senior citizen",
+            "elderly",
+            "retirement"
+        ]
+    },
+    {
+        "name": "Small Business",
+        "keywords": [
+            "business",
+            "shop",
+            "startup",
+            "entrepreneur",
+            "company"
+        ]
+    }
+]
