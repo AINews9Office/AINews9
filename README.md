@@ -159,7 +159,7 @@ AINews9/
 ├── Pragya/
 
 ├── docs/
-├── Releases/
+├── Releasees/
 
 └── README.md
 ```
@@ -175,10 +175,10 @@ AI onboarding documentation.
 Contains:
 
 - PROJECT.md
-- ARCHITECTURE.md
 - CURRENT_SPRINT.md
 - DECISIONS.md
 - AGENTS.md
+- CODING_STANDARDS.md
 
 ---
 
@@ -335,11 +335,13 @@ Review the following documents before making changes:
 ```
 .ai/PROJECT.md
 
-.ai/ARCHITECTURE.md
-
 .ai/CURRENT_SPRINT.md
 
 AINews9 PKB/
+
+Pragya/docs/PRG-001.md
+
+Pragya/docs/PRG-002.md
 ```
 
 Then begin development.
@@ -418,7 +420,7 @@ Future contributions should follow the engineering guidelines documented in:
 ```
 .ai/PROJECT.md
 
-.ai/ARCHITECTURE.md
+.ai/CODING_STANDARDS.md
 
 .github/copilot-instructions.md
 ```

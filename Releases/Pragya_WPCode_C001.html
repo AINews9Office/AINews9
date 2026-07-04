@@ -1,0 +1,281 @@
+<!-- Pragya C-001 Welcome Experience - WPCode Footer Snippet -->
+<div id="pragya-c001-widget" class="pragya-c001">
+  <button
+    id="pragya-c001-toggle"
+    class="pragya-c001-toggle"
+    type="button"
+    aria-label="Open Pragya"
+    aria-controls="pragya-c001-panel"
+    aria-expanded="false"
+  >
+    Pragya
+  </button>
+
+  <section
+    id="pragya-c001-panel"
+    class="pragya-c001-panel"
+    aria-labelledby="pragya-c001-title"
+    hidden
+  >
+    <div class="pragya-c001-header">
+      <div>
+        <strong>Pragya</strong>
+        <small>Powered by AINews9</small>
+      </div>
+      <button
+        id="pragya-c001-close"
+        class="pragya-c001-close"
+        type="button"
+        aria-label="Close Pragya"
+      >
+        x
+      </button>
+    </div>
+
+    <div class="pragya-c001-messages">
+      <div class="pragya-c001-welcome">
+        <p id="pragya-c001-title" class="pragya-c001-title">
+          Hello! I'm Pragya, your AI Learning Companion.
+        </p>
+        <p class="pragya-c001-intro">
+          I can help you learn AI, discover AI tools, stay safe online and grow your AI skills.
+        </p>
+        <div class="pragya-c001-options" aria-label="Choose your AI journey">
+          <button type="button" class="pragya-c001-option" data-journey="Learn AI">Learn AI</button>
+          <button type="button" class="pragya-c001-option" data-journey="Use AI">Use AI</button>
+          <button type="button" class="pragya-c001-option" data-journey="Stay Safe">Stay Safe</button>
+          <button type="button" class="pragya-c001-option" data-journey="Grow with AI">Grow with AI</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .pragya-c001,
+  .pragya-c001 * {
+    box-sizing: border-box;
+  }
+
+  .pragya-c001 {
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999999;
+  }
+
+  .pragya-c001-toggle {
+    align-items: center;
+    background: #0f766e;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.24);
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 52px;
+    min-width: 112px;
+    padding: 14px 18px;
+  }
+
+  .pragya-c001-toggle:hover,
+  .pragya-c001-toggle:focus {
+    background: #115e59;
+    outline: 3px solid rgba(20, 184, 166, 0.28);
+    outline-offset: 3px;
+  }
+
+  .pragya-c001-panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    bottom: 72px;
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.22);
+    max-height: calc(100vh - 112px);
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 380px;
+  }
+
+  .pragya-c001-header {
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+  }
+
+  .pragya-c001-header strong {
+    color: #111827;
+    display: block;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .pragya-c001-header small {
+    color: #667085;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .pragya-c001-close {
+    align-items: center;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    color: #374151;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 16px;
+    height: 32px;
+    justify-content: center;
+    line-height: 1;
+    width: 32px;
+  }
+
+  .pragya-c001-close:hover,
+  .pragya-c001-close:focus {
+    background: #e5e7eb;
+    outline: none;
+  }
+
+  .pragya-c001-messages {
+    max-height: calc(100vh - 184px);
+    overflow-y: auto;
+    padding: 14px;
+    scroll-behavior: smooth;
+  }
+
+  .pragya-c001-welcome {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    line-height: 1.5;
+    padding: 18px;
+  }
+
+  .pragya-c001-title {
+    color: #111827;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .pragya-c001-intro {
+    color: #374151;
+    font-size: 15px;
+    margin: 0 0 16px;
+  }
+
+  .pragya-c001-options {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pragya-c001-option {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #111827;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    min-height: 44px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .pragya-c001-option:hover,
+  .pragya-c001-option:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+
+  .pragya-c001-option.selected {
+    background: #e0f2fe;
+    border-color: #0284c7;
+    color: #075985;
+  }
+
+  @media (max-width: 480px) {
+    .pragya-c001 {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+    }
+
+    .pragya-c001-toggle {
+      margin-left: auto;
+      min-width: 104px;
+    }
+
+    .pragya-c001-panel {
+      bottom: 68px;
+      left: 0;
+      right: 0;
+      width: auto;
+    }
+
+    .pragya-c001-options {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    var widget = document.getElementById("pragya-c001-widget");
+    if (!widget) return;
+
+    var toggle = document.getElementById("pragya-c001-toggle");
+    var panel = document.getElementById("pragya-c001-panel");
+    var close = document.getElementById("pragya-c001-close");
+    var journeyOptions = widget.querySelectorAll(".pragya-c001-option");
+
+    function openPanel() {
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close Pragya");
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open Pragya");
+    }
+
+    toggle.addEventListener("click", function() {
+      if (panel.hidden) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    });
+
+    close.addEventListener("click", closePanel);
+
+    journeyOptions.forEach(function(option) {
+      option.setAttribute("aria-pressed", "false");
+
+      option.addEventListener("click", function() {
+        journeyOptions.forEach(function(item) {
+          item.classList.remove("selected");
+          item.setAttribute("aria-pressed", "false");
+        });
+
+        option.classList.add("selected");
+        option.setAttribute("aria-pressed", "true");
+      });
+    });
+  })();
+</script>

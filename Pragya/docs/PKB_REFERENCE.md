@@ -1,9 +1,16 @@
 Product Specification
 
-Refer to:
+Canonical Pragya documents:
 
-AINews9 PKB/02_Product/
+- Pragya/docs/PRG-001.md
+- Pragya/docs/PRG-002.md
+- Pragya/docs/PRG_DECISION_LOG.md
+- Pragya/PROJECT_STATUS.md
 
-PRG-001 Pragya Master Specification.md
+Product Knowledge Base reference:
 
-PRG-002 Pragya Capability Roadmap.md
+- AINews9 PKB/
+
+The AINews9 PKB remains the source of overall product vision and platform strategy.
+
+The Pragya docs above are the canonical implementation references for Pragya Phase 1.

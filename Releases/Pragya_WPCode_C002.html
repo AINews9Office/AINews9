@@ -1,0 +1,367 @@
+<!-- Pragya C-002 Guided Learning Wizard - WPCode Footer Snippet -->
+<div id="pragya-c002-widget" class="pragya-c002">
+  <button
+    id="pragya-c002-toggle"
+    class="pragya-c002-toggle"
+    type="button"
+    aria-label="Open Pragya"
+    aria-controls="pragya-c002-panel"
+    aria-expanded="false"
+  >
+    Pragya
+  </button>
+
+  <section
+    id="pragya-c002-panel"
+    class="pragya-c002-panel"
+    aria-labelledby="pragya-c002-title"
+    hidden
+  >
+    <div class="pragya-c002-header">
+      <div>
+        <strong>Pragya</strong>
+        <small>Powered by AINews9</small>
+      </div>
+      <button
+        id="pragya-c002-close"
+        class="pragya-c002-close"
+        type="button"
+        aria-label="Close Pragya"
+      >
+        x
+      </button>
+    </div>
+
+    <div class="pragya-c002-messages">
+      <section id="pragya-c002-welcome-step" class="pragya-c002-card" aria-labelledby="pragya-c002-title">
+        <p id="pragya-c002-title" class="pragya-c002-title">
+          Hello! I'm Pragya, your AI Learning Companion.
+        </p>
+        <p class="pragya-c002-intro">
+          I can help you learn AI, discover AI tools, stay safe online and grow your AI skills.
+        </p>
+        <div class="pragya-c002-options" aria-label="Choose your AI journey">
+          <button type="button" class="pragya-c002-option pragya-c002-journey" data-journey="Learn AI">Learn AI</button>
+          <button type="button" class="pragya-c002-option pragya-c002-journey" data-journey="Use AI">Use AI</button>
+          <button type="button" class="pragya-c002-option pragya-c002-journey" data-journey="Stay Safe">Stay Safe</button>
+          <button type="button" class="pragya-c002-option pragya-c002-journey" data-journey="Grow with AI">Grow with AI</button>
+        </div>
+      </section>
+
+      <section
+        id="pragya-c002-persona-step"
+        class="pragya-c002-card"
+        aria-labelledby="pragya-c002-persona-title"
+        hidden
+      >
+        <button type="button" id="pragya-c002-back" class="pragya-c002-back">Back</button>
+        <p id="pragya-c002-persona-title" class="pragya-c002-title">Who are you?</p>
+        <p class="pragya-c002-intro">Choose the option that best describes you.</p>
+        <div class="pragya-c002-options" aria-label="Choose your persona">
+          <button type="button" class="pragya-c002-option pragya-c002-persona" data-persona="Student">Student</button>
+          <button type="button" class="pragya-c002-option pragya-c002-persona" data-persona="Teacher">Teacher</button>
+          <button type="button" class="pragya-c002-option pragya-c002-persona" data-persona="Professional">Professional</button>
+          <button type="button" class="pragya-c002-option pragya-c002-persona" data-persona="Parent">Parent</button>
+          <button type="button" class="pragya-c002-option pragya-c002-persona" data-persona="Senior Citizen">Senior Citizen</button>
+          <button type="button" class="pragya-c002-option pragya-c002-persona" data-persona="Small Business">Small Business</button>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>
+
+<style>
+  .pragya-c002,
+  .pragya-c002 * {
+    box-sizing: border-box;
+  }
+
+  .pragya-c002 {
+    bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    right: 20px;
+    z-index: 999999;
+  }
+
+  .pragya-c002-toggle {
+    align-items: center;
+    background: #0f766e;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.24);
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 52px;
+    min-width: 112px;
+    padding: 14px 18px;
+  }
+
+  .pragya-c002-toggle:hover,
+  .pragya-c002-toggle:focus {
+    background: #115e59;
+    outline: 3px solid rgba(20, 184, 166, 0.28);
+    outline-offset: 3px;
+  }
+
+  .pragya-c002-panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    bottom: 72px;
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.22);
+    max-height: calc(100vh - 112px);
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 380px;
+  }
+
+  .pragya-c002-header {
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+  }
+
+  .pragya-c002-header strong {
+    color: #111827;
+    display: block;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .pragya-c002-header small {
+    color: #667085;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .pragya-c002-close {
+    align-items: center;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    color: #374151;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 16px;
+    height: 32px;
+    justify-content: center;
+    line-height: 1;
+    width: 32px;
+  }
+
+  .pragya-c002-close:hover,
+  .pragya-c002-close:focus {
+    background: #e5e7eb;
+    outline: none;
+  }
+
+  .pragya-c002-messages {
+    max-height: calc(100vh - 184px);
+    overflow-y: auto;
+    padding: 14px;
+    scroll-behavior: smooth;
+  }
+
+  .pragya-c002-card {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    line-height: 1.5;
+    padding: 18px;
+  }
+
+  .pragya-c002-title {
+    color: #111827;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .pragya-c002-intro {
+    color: #374151;
+    font-size: 15px;
+    margin: 0 0 16px;
+  }
+
+  .pragya-c002-options {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pragya-c002-option {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    color: #111827;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    min-height: 44px;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .pragya-c002-option:hover,
+  .pragya-c002-option:focus {
+    border-color: #2563eb;
+    outline: none;
+  }
+
+  .pragya-c002-option.selected {
+    background: #e0f2fe;
+    border-color: #0284c7;
+    color: #075985;
+  }
+
+  .pragya-c002-back {
+    background: transparent;
+    border: 0;
+    color: #2563eb;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    margin: 0 0 12px;
+    padding: 0;
+  }
+
+  .pragya-c002-back:hover,
+  .pragya-c002-back:focus {
+    color: #1d4ed8;
+    outline: none;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .pragya-c002 {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+    }
+
+    .pragya-c002-toggle {
+      margin-left: auto;
+      min-width: 104px;
+    }
+
+    .pragya-c002-panel {
+      bottom: 68px;
+      left: 0;
+      right: 0;
+      width: auto;
+    }
+
+    .pragya-c002-options {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const PRAGYA_CONFIG = {
+      VERSION: "0.1.0",
+      ENVIRONMENT: "Development",
+      API_URL: "http://127.0.0.1:8000"
+    };
+
+    var widget = document.getElementById("pragya-c002-widget");
+    if (!widget) return;
+
+    var currentStep = "welcome";
+    var selectedJourney = null;
+    var selectedPersona = null;
+
+    var toggle = document.getElementById("pragya-c002-toggle");
+    var panel = document.getElementById("pragya-c002-panel");
+    var close = document.getElementById("pragya-c002-close");
+    var welcomeStep = document.getElementById("pragya-c002-welcome-step");
+    var personaStep = document.getElementById("pragya-c002-persona-step");
+    var backButton = document.getElementById("pragya-c002-back");
+    var journeyOptions = widget.querySelectorAll(".pragya-c002-journey");
+    var personaOptions = widget.querySelectorAll(".pragya-c002-persona");
+
+    function openPanel() {
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close Pragya");
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open Pragya");
+    }
+
+    function renderStep() {
+      welcomeStep.hidden = currentStep !== "welcome";
+      personaStep.hidden = currentStep !== "persona";
+    }
+
+    function updateJourneySelection() {
+      journeyOptions.forEach(function(option) {
+        var isSelected = option.dataset.journey === selectedJourney;
+        option.classList.toggle("selected", isSelected);
+        option.setAttribute("aria-pressed", String(isSelected));
+      });
+    }
+
+    function updatePersonaSelection() {
+      personaOptions.forEach(function(option) {
+        var isSelected = option.dataset.persona === selectedPersona;
+        option.classList.toggle("selected", isSelected);
+        option.setAttribute("aria-pressed", String(isSelected));
+      });
+    }
+
+    toggle.addEventListener("click", function() {
+      if (panel.hidden) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    });
+
+    close.addEventListener("click", closePanel);
+
+    journeyOptions.forEach(function(option) {
+      option.setAttribute("aria-pressed", "false");
+
+      option.addEventListener("click", function() {
+        selectedJourney = option.dataset.journey;
+        currentStep = "persona";
+        updateJourneySelection();
+        renderStep();
+      });
+    });
+
+    personaOptions.forEach(function(option) {
+      option.setAttribute("aria-pressed", "false");
+
+      option.addEventListener("click", function() {
+        selectedPersona = option.dataset.persona;
+        updatePersonaSelection();
+      });
+    });
+
+    backButton.addEventListener("click", function() {
+      currentStep = "welcome";
+      renderStep();
+      updateJourneySelection();
+    });
+
+    renderStep();
+  })();
+</script>

@@ -1,0 +1,1174 @@
+<!-- Pragya MVP WPCode Footer Snippet - C-001 through C-005 -->
+<div id="pragya-widget-shell" class="pragya-widget-shell">
+  <button id="pragya-widget-toggle" class="pragya-widget-toggle" type="button" aria-label="Open Pragya" aria-controls="pragya-widget-panel" aria-expanded="false">
+    Pragya
+  </button>
+
+  <section id="pragya-widget-panel" class="pragya-widget-panel" aria-label="Pragya" hidden>
+    <div class="pragya-widget-header">
+      <div>
+        <strong>Pragya</strong>
+        <small>Powered by AINews9</small>
+      </div>
+      <button id="pragya-widget-close" class="pragya-widget-close" type="button" aria-label="Close Pragya">x</button>
+    </div>
+
+    <div class="pragya-widget-body">
+<div id="chat">
+
+<div id="messages">
+<section id="welcome-step" class="welcome" aria-labelledby="welcome-title">
+<p id="welcome-title" class="welcome-title">Hello! I'm Pragya, your AI Learning Companion.</p>
+<p class="welcome-intro">I can help you learn AI, discover AI tools, stay safe online and grow your AI skills.</p>
+<div class="journey-options" aria-label="Choose your AI journey">
+<button type="button" class="journey-option" data-journey="Learn AI">Learn AI</button>
+<button type="button" class="journey-option" data-journey="Use AI">Use AI</button>
+<button type="button" class="journey-option" data-journey="Stay Safe">Stay Safe</button>
+<button type="button" class="journey-option" data-journey="Grow with AI">Grow with AI</button>
+</div>
+</section>
+<section id="persona-step" class="persona" aria-labelledby="persona-title" hidden>
+<button type="button" id="back-to-welcome" class="back-button">Back</button>
+<p id="persona-title" class="welcome-title">Who are you?</p>
+<p class="welcome-intro">Choose the option that best describes you.</p>
+<div class="persona-options" aria-label="Choose your persona">
+<button type="button" class="persona-option" data-persona="Student">Student</button>
+<button type="button" class="persona-option" data-persona="Teacher">Teacher</button>
+<button type="button" class="persona-option" data-persona="Professional">Professional</button>
+<button type="button" class="persona-option" data-persona="Parent">Parent</button>
+<button type="button" class="persona-option" data-persona="Senior Citizen">Senior Citizen</button>
+<button type="button" class="persona-option" data-persona="Small Business">Small Business</button>
+</div>
+</section>
+<section id="topic-step" class="topic" aria-labelledby="topic-title" hidden>
+<button type="button" id="back-to-persona" class="back-button">Back</button>
+<p id="topic-title" class="welcome-title">What would you like to learn today?</p>
+<p class="welcome-intro">Choose a topic to begin your AI learning journey.</p>
+<p class="topic-section-title">Suggested Topics</p>
+<div id="topic-options" class="topic-options" aria-label="Choose your topic"></div>
+<p class="topic-section-title">Popular Questions</p>
+<div id="popular-question-options" class="popular-question-options" aria-label="Choose a popular question"></div>
+<label class="question-label" for="custom-question">Ask Your Own Question</label>
+<textarea id="custom-question" class="custom-question" rows="3" placeholder="How can AI help me prepare better lesson plans?"></textarea>
+<button type="button" id="continue-topic" class="continue-button" disabled>Continue</button>
+<div id="pragya-response" class="pragya-response" aria-live="polite" hidden></div>
+</section>
+</div>
+</div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .pragya-widget-shell,
+  .pragya-widget-shell * {
+    box-sizing: border-box;
+  }
+
+  .pragya-widget-shell {
+    bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    right: 20px;
+    z-index: 999999;
+  }
+
+  .pragya-widget-toggle {
+    align-items: center;
+    background: #0f766e;
+    border: 0;
+    border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.24);
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    justify-content: center;
+    min-height: 52px;
+    min-width: 112px;
+    padding: 14px 18px;
+  }
+
+  .pragya-widget-toggle:hover,
+  .pragya-widget-toggle:focus {
+    background: #115e59;
+    outline: 3px solid rgba(20, 184, 166, 0.28);
+    outline-offset: 3px;
+  }
+
+  .pragya-widget-panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    bottom: 72px;
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.22);
+    max-height: calc(100vh - 112px);
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    width: 380px;
+  }
+
+  .pragya-widget-header {
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+  }
+
+  .pragya-widget-header strong {
+    color: #111827;
+    display: block;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .pragya-widget-header small {
+    color: #667085;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .pragya-widget-close {
+    align-items: center;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 50%;
+    color: #374151;
+    cursor: pointer;
+    display: inline-flex;
+    font: inherit;
+    font-size: 16px;
+    height: 32px;
+    justify-content: center;
+    line-height: 1;
+    width: 32px;
+  }
+
+  .pragya-widget-close:hover,
+  .pragya-widget-close:focus {
+    background: #e5e7eb;
+    outline: none;
+  }
+
+  .pragya-widget-body {
+    max-height: calc(100vh - 184px);
+    overflow-y: auto;
+    padding: 14px;
+  }
+
+.header{
+
+font-weight:700;
+
+padding:14px 16px;
+
+border-bottom:1px solid #E5E7EB;
+
+}
+
+.header small{
+
+display:block;
+
+font-weight:500;
+
+color:#667085;
+
+margin-top:2px;
+
+}
+
+.welcome,
+.persona,
+.topic{
+
+background:#F8FAFC;
+
+border:1px solid #E5E7EB;
+
+border-radius:8px;
+
+padding:18px;
+
+margin:12px 0;
+
+line-height:1.5;
+
+}
+
+.welcome-title{
+
+font-size:20px;
+
+font-weight:700;
+
+margin:0 0 8px;
+
+color:#111827;
+
+}
+
+.welcome-intro{
+
+margin:0 0 16px;
+
+color:#374151;
+
+}
+
+.journey-options,
+.persona-options,
+.topic-options,
+.popular-question-options{
+
+display:grid;
+
+grid-template-columns:repeat(2,minmax(0,1fr));
+
+gap:10px;
+
+}
+
+.journey-option,
+.persona-option,
+.topic-option,
+.popular-question-option{
+
+background:#FFFFFF;
+
+border:1px solid #CBD5E1;
+
+border-radius:8px;
+
+color:#111827;
+
+cursor:pointer;
+
+font:inherit;
+
+font-weight:600;
+
+min-height:44px;
+
+padding:10px 12px;
+
+text-align:left;
+
+}
+
+.journey-option:hover,
+.journey-option:focus,
+.persona-option:hover,
+.persona-option:focus,
+.topic-option:hover,
+.topic-option:focus,
+.popular-question-option:hover,
+.popular-question-option:focus{
+
+border-color:#2563EB;
+
+outline:none;
+
+}
+
+.journey-option.selected,
+.persona-option.selected,
+.topic-option.selected,
+.popular-question-option.selected{
+
+background:#E0F2FE;
+
+border-color:#0284C7;
+
+color:#075985;
+
+}
+
+.topic-section-title,
+.question-label{
+
+color:#111827;
+
+display:block;
+
+font-weight:700;
+
+margin:16px 0 8px;
+
+}
+
+.custom-question{
+
+border:1px solid #CBD5E1;
+
+border-radius:8px;
+
+color:#111827;
+
+font:inherit;
+
+line-height:1.5;
+
+min-height:88px;
+
+padding:10px 12px;
+
+resize:vertical;
+
+width:100%;
+
+}
+
+.custom-question:focus{
+
+border-color:#2563EB;
+
+outline:none;
+
+}
+
+.continue-button{
+
+background:#0F766E;
+
+border:0;
+
+border-radius:8px;
+
+color:#FFFFFF;
+
+cursor:pointer;
+
+font:inherit;
+
+font-weight:700;
+
+margin-top:12px;
+
+min-height:44px;
+
+padding:10px 16px;
+
+width:100%;
+
+}
+
+.continue-button:disabled{
+
+background:#CBD5E1;
+
+color:#64748B;
+
+cursor:not-allowed;
+
+}
+
+.pragya-response{
+
+background:#EEF4FF;
+
+border:1px solid #CBD5E1;
+
+border-radius:8px;
+
+color:#111827;
+
+line-height:1.6;
+
+margin-top:12px;
+
+padding:12px;
+
+white-space:pre-wrap;
+
+}
+
+.pragya-response.error{
+
+background:#FEF2F2;
+
+border-color:#FECACA;
+
+color:#991B1B;
+
+}
+
+.back-button{
+
+background:transparent;
+
+border:0;
+
+color:#2563EB;
+
+cursor:pointer;
+
+font:inherit;
+
+font-weight:600;
+
+margin:0 0 12px;
+
+padding:0;
+
+}
+
+.back-button:hover,
+.back-button:focus{
+
+color:#1D4ED8;
+
+outline:none;
+
+text-decoration:underline;
+
+}
+
+.bot{
+
+background:#EEF4FF;
+
+padding:12px;
+
+border-radius:10px;
+
+margin:10px 0;
+
+max-width:90%;
+
+line-height:1.6;
+
+}
+
+.user{
+
+background:#DCFCE7;
+
+padding:12px;
+
+border-radius:10px;
+
+margin:10px 0;
+
+margin-left:auto;
+
+max-width:90%;
+
+line-height:1.6;
+
+text-align:right;
+
+}
+
+#messages{
+
+scroll-behavior:smooth;
+
+}
+
+@media (max-width: 480px){
+
+.journey-options,
+.persona-options,
+.topic-options,
+.popular-question-options{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+  @media (max-width: 480px) {
+    .pragya-widget-shell {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+    }
+
+    .pragya-widget-toggle {
+      margin-left: auto;
+      min-width: 104px;
+    }
+
+    .pragya-widget-panel {
+      bottom: 68px;
+      left: 0;
+      right: 0;
+      width: auto;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const toggle = document.getElementById("pragya-widget-toggle");
+    const panel = document.getElementById("pragya-widget-panel");
+    const close = document.getElementById("pragya-widget-close");
+
+    function openPanel() {
+      panel.hidden = false;
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close Pragya");
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open Pragya");
+    }
+
+    toggle.addEventListener("click", function() {
+      if (panel.hidden) {
+        openPanel();
+      } else {
+        closePanel();
+      }
+    });
+
+    close.addEventListener("click", closePanel);
+  })();
+
+window.PRAGYA_CONFIG = {
+    VERSION: "0.1.0",
+    ENVIRONMENT: "Development",
+    API_URL: "http://127.0.0.1:8000",
+    API_TIMEOUT_MS: 15000,
+    DEFAULT_PILLAR: "Learn AI",
+    TOPICS_BY_JOURNEY: {
+        "Learn AI": [
+            "What is AI?",
+            "Generative AI",
+            "Machine Learning",
+            "Large Language Models",
+            "Prompt Engineering",
+            "AI Agents"
+        ],
+        "Use AI": [
+            "ChatGPT",
+            "Microsoft Copilot",
+            "Google Gemini",
+            "Claude",
+            "NotebookLM",
+            "AI for Daily Work"
+        ],
+        "Stay Safe": [
+            "AI Scams",
+            "Deepfakes",
+            "Privacy",
+            "Safe Prompting",
+            "AI Hallucinations",
+            "Responsible AI"
+        ],
+        "Grow with AI": [
+            "AI Career Skills",
+            "AI Resume",
+            "AI Productivity",
+            "AI Business",
+            "AI Entrepreneurship",
+            "Future of Work"
+        ]
+    },
+    POPULAR_QUESTIONS: {
+        "Learn AI": {
+            "Student": ["What is AI in simple words?", "How can I start learning AI as a student?", "What is the difference between AI and machine learning?", "Which AI skills should students learn first?"],
+            "Teacher": ["How can AI help me create lesson plans?", "Which AI tools are best for teachers?", "Can AI prepare classroom activities?", "How do I use ChatGPT in teaching?"],
+            "Professional": ["What AI concepts should every professional know?", "How can I learn AI without a technical background?", "Which AI skills are useful at work?", "How do large language models work?"],
+            "Parent": ["How can I explain AI to my child?", "What should parents know about AI?", "How is AI used in children's education?", "Is AI safe for students to use?"],
+            "Senior Citizen": ["What is AI in everyday life?", "How can AI help senior citizens?", "Which AI tools are easy to understand?", "How do I start learning AI slowly?"],
+            "Small Business": ["What AI basics should small businesses know?", "How can AI help my business grow?", "Which AI concepts matter for business owners?", "How can I start using AI without a big budget?"]
+        },
+        "Use AI": {
+            "Student": ["How can ChatGPT help me study better?", "Which AI tools are useful for assignments?", "How do I use AI without copying?", "Can AI help me prepare for exams?"],
+            "Teacher": ["How can AI help me prepare better lesson plans?", "Can AI create worksheets for my class?", "Which AI tools help teachers save time?", "How can I use AI for student feedback?"],
+            "Professional": ["How can AI improve my daily work?", "Which AI tools should professionals use?", "How can I write better emails with AI?", "Can AI help me summarize long documents?"],
+            "Parent": ["Which AI tools can help parents support learning?", "How can I use AI safely at home?", "Can AI help explain school topics?", "How do I guide my child while using AI?"],
+            "Senior Citizen": ["How can I use AI on my phone?", "Can AI help me write messages?", "Which AI tools are simple for beginners?", "How can AI help with daily tasks?"],
+            "Small Business": ["How can AI help with customer messages?", "Which AI tools are useful for small businesses?", "Can AI create marketing content?", "How can AI save time in daily business work?"]
+        },
+        "Stay Safe": {
+            "Student": ["How can students avoid AI scams?", "What are deepfakes?", "How do I use AI without sharing private data?", "How can I check if AI information is wrong?"],
+            "Teacher": ["How can teachers identify AI misuse?", "How do I teach students about deepfakes?", "What AI safety rules should classrooms follow?", "How can students use AI responsibly?"],
+            "Professional": ["How do I protect company data while using AI?", "What should I avoid entering into AI tools?", "How can I verify AI-generated information?", "What are common AI risks at work?"],
+            "Parent": ["How can I keep my child safe while using AI?", "What are AI scams parents should know?", "How do I explain deepfakes to children?", "What privacy rules should children follow with AI?"],
+            "Senior Citizen": ["How can I identify AI scams?", "What should I avoid sharing with AI tools?", "How do deepfake scams work?", "How can I use AI safely?"],
+            "Small Business": ["How can small businesses avoid AI scams?", "What business data should not be shared with AI?", "How can I check AI-generated content for mistakes?", "What are safe AI practices for teams?"]
+        },
+        "Grow with AI": {
+            "Student": ["Which AI skills can help my future career?", "How can I build an AI-ready resume?", "What AI careers can students explore?", "How can AI improve my productivity?"],
+            "Teacher": ["How can AI improve my teaching career?", "Which AI skills should teachers learn?", "Can AI help me create better learning materials?", "How can teachers grow with AI tools?"],
+            "Professional": ["Which AI skills can improve my career?", "How do I add AI skills to my resume?", "How can AI improve productivity at work?", "What is the future of work with AI?"],
+            "Parent": ["How can parents prepare children for AI careers?", "Which AI skills will matter in the future?", "How can AI support family productivity?", "What should children learn for the future of work?"],
+            "Senior Citizen": ["How can senior citizens benefit from AI?", "Can AI help me learn new skills?", "How can AI support independent living?", "What AI tools are useful after retirement?"],
+            "Small Business": ["How can AI help grow my small business?", "Can AI improve business productivity?", "Which AI skills should business owners learn?", "How can I use AI for entrepreneurship?"]
+        }
+    },
+    INTENT_KEYWORDS: {
+        greeting: ["hello", "hi", "hey", "namaste", "good morning", "good afternoon", "good evening"],
+        compare: ["compare", "difference", "versus", "vs", "better than", "which is better"],
+        news: ["news", "latest", "today", "update", "announcement", "launched"],
+        tools: ["tool", "tools", "app", "apps", "software", "platform", "chatgpt", "gemini", "copilot", "claude", "notebooklm"],
+        safe: ["safe", "safety", "scam", "scams", "deepfake", "privacy", "hallucination", "responsible", "risk"],
+        grow: ["career", "resume", "job", "business", "entrepreneurship", "productivity", "future of work", "skills"],
+        use: ["use", "create", "write", "prepare", "summarize", "generate", "automate", "prompt"],
+        learn: ["learn", "what is", "explain", "understand", "basics", "concept", "machine learning", "llm", "generative ai"]
+    },
+    PILLAR_KEYWORDS: {
+        "Learn AI": ["learn", "what is", "explain", "understand", "basics", "concept", "machine learning", "large language model", "llm", "generative ai", "ai agents"],
+        "Use AI": ["use", "tool", "tools", "chatgpt", "gemini", "copilot", "claude", "notebooklm", "prompt", "create", "write", "summarize", "automate"],
+        "Stay Safe": ["safe", "safety", "scam", "scams", "deepfake", "privacy", "hallucination", "responsible ai", "risk", "misuse"],
+        "Grow with AI": ["career", "resume", "job", "business", "entrepreneurship", "productivity", "future of work", "skills", "grow"]
+    },
+    PERSONA_KEYWORDS: {
+        "Student": ["student", "students", "school", "college", "exam", "assignment"],
+        "Teacher": ["teacher", "teachers", "teaching", "classroom", "lesson", "educator"],
+        "Professional": ["professional", "professionals", "employee", "workplace", "office", "manager"],
+        "Parent": ["parent", "parents", "child", "children", "kids"],
+        "Senior Citizen": ["senior citizen", "senior citizens", "retired", "elderly"],
+        "Small Business": ["small business", "business owner", "shop", "startup", "entrepreneur"]
+    },
+    DOMAIN_KEYWORDS: {
+        ALLOWED: ["ai", "artificial intelligence", "chatgpt", "gemini", "copilot", "claude", "notebooklm", "machine learning", "generative", "prompt", "llm", "large language model", "deepfake", "automation", "ai tool", "ai tools", "privacy", "safe prompting", "hallucination", "responsible ai", "career skills", "resume", "productivity", "future of work", "ai business", "entrepreneurship"],
+        UNRELATED: ["ipl", "cricket score", "pizza recipe", "weather today", "stock price", "movie ticket", "train status"]
+    }
+};
+
+
+const PRAGYA_CONFIG = window.PRAGYA_CONFIG;
+
+let currentStep = "welcome";
+let selectedJourney = null;
+let selectedPersona = null;
+let selectedTopic = null;
+let selectedSuggestedTopic = null;
+let selectedPopularQuestion = null;
+let questionText = "";
+let conversationContext = null;
+
+const welcomeStep = document.getElementById("welcome-step");
+const personaStep = document.getElementById("persona-step");
+const topicStep = document.getElementById("topic-step");
+const backToWelcomeButton = document.getElementById("back-to-welcome");
+const backToPersonaButton = document.getElementById("back-to-persona");
+const topicOptionsContainer = document.getElementById("topic-options");
+const popularQuestionOptionsContainer = document.getElementById("popular-question-options");
+const customQuestionInput = document.getElementById("custom-question");
+const continueTopicButton = document.getElementById("continue-topic");
+const pragyaResponse = document.getElementById("pragya-response");
+const journeyOptions = document.querySelectorAll(".journey-option");
+const personaOptions = document.querySelectorAll(".persona-option");
+
+function normalizeText(text) {
+
+    return String(text || "").toLowerCase().trim();
+
+}
+
+function includesKeyword(text, keyword) {
+
+    return normalizeText(text).includes(normalizeText(keyword));
+
+}
+
+function findKeywordMatch(question, keywordMap, fallbackValue) {
+
+    const normalizedQuestion = normalizeText(question);
+
+    const entries = Object.entries(keywordMap || {});
+
+    const matchedEntry = entries.find(function(entry) {
+
+        return entry[1].some(function(keyword) {
+
+            return normalizedQuestion.includes(normalizeText(keyword));
+
+        });
+
+    });
+
+    return matchedEntry ? matchedEntry[0] : fallbackValue;
+
+}
+
+function detectIntent(question) {
+
+    return findKeywordMatch(question, PRAGYA_CONFIG.INTENT_KEYWORDS, "general");
+
+}
+
+function detectPersona(question) {
+
+    if (selectedPersona) return selectedPersona;
+
+    return findKeywordMatch(question, PRAGYA_CONFIG.PERSONA_KEYWORDS, "unknown");
+
+}
+
+function detectPillar(question) {
+
+    return findKeywordMatch(question, PRAGYA_CONFIG.PILLAR_KEYWORDS, selectedJourney || PRAGYA_CONFIG.DEFAULT_PILLAR);
+
+}
+
+function isDomainAllowed(question) {
+
+    const domainKeywords = PRAGYA_CONFIG.DOMAIN_KEYWORDS || {};
+
+    const allowedKeywords = domainKeywords.ALLOWED || [];
+
+    const unrelatedKeywords = domainKeywords.UNRELATED || [];
+
+    const hasAllowedKeyword = allowedKeywords.some(function(keyword) {
+
+        return includesKeyword(question, keyword);
+
+    });
+
+    const hasUnrelatedKeyword = unrelatedKeywords.some(function(keyword) {
+
+        return includesKeyword(question, keyword);
+
+    });
+
+    if (hasAllowedKeyword) return true;
+
+    if (hasUnrelatedKeyword) return false;
+
+    return false;
+
+}
+
+function buildConversationContext(question) {
+
+    return {
+        question: question,
+        journey: selectedJourney,
+        persona: detectPersona(question),
+        intent: detectIntent(question),
+        pillar: detectPillar(question),
+        domainAllowed: isDomainAllowed(question)
+    };
+
+}
+
+function showPragyaResponse(message, isError) {
+
+    pragyaResponse.hidden = false;
+
+    pragyaResponse.classList.toggle("error", Boolean(isError));
+
+    pragyaResponse.textContent = message;
+
+}
+
+function clearPragyaResponse() {
+
+    pragyaResponse.hidden = true;
+
+    pragyaResponse.classList.remove("error");
+
+    pragyaResponse.textContent = "";
+
+}
+
+async function callPragyaAPI(context) {
+
+    const controller = new AbortController();
+
+    const timeoutId = window.setTimeout(function() {
+
+        controller.abort();
+
+    }, PRAGYA_CONFIG.API_TIMEOUT_MS);
+
+    try {
+
+        const response = await fetch(PRAGYA_CONFIG.API_URL + "/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(context),
+            signal: controller.signal
+        });
+
+        if (!response.ok) {
+
+            throw new Error("Pragya API returned an error.");
+
+        }
+
+        return await response.json();
+
+    } finally {
+
+        window.clearTimeout(timeoutId);
+
+    }
+
+}
+
+function handleApiResponse(data) {
+
+    if (!data || typeof data.answer !== "string" || data.answer.trim() === "") {
+
+        throw new Error("Pragya API returned an unexpected response.");
+
+    }
+
+    showPragyaResponse(data.answer, false);
+
+}
+
+function handleApiError() {
+
+    showPragyaResponse("Sorry, Pragya is temporarily unavailable. Please try again in a moment.", true);
+
+}
+
+function renderStep() {
+
+    welcomeStep.hidden = currentStep !== "welcome";
+
+    personaStep.hidden = currentStep !== "persona";
+
+    topicStep.hidden = currentStep !== "topic";
+
+}
+
+function updateJourneySelection() {
+
+    journeyOptions.forEach(function(option) {
+
+        const isSelected = option.dataset.journey === selectedJourney;
+
+        option.classList.toggle("selected", isSelected);
+
+        option.setAttribute("aria-pressed", String(isSelected));
+
+    });
+
+}
+
+function updatePersonaSelection() {
+
+    personaOptions.forEach(function(option) {
+
+        const isSelected = option.dataset.persona === selectedPersona;
+
+        option.classList.toggle("selected", isSelected);
+
+        option.setAttribute("aria-pressed", String(isSelected));
+
+    });
+
+}
+
+function updateTopicSelection() {
+
+    const topicOptions = topicOptionsContainer.querySelectorAll(".topic-option");
+
+    topicOptions.forEach(function(option) {
+
+        const isSelected = option.dataset.topic === selectedSuggestedTopic;
+
+        option.classList.toggle("selected", isSelected);
+
+        option.setAttribute("aria-pressed", String(isSelected));
+
+    });
+
+}
+
+function updatePopularQuestionSelection() {
+
+    const questionOptions = popularQuestionOptionsContainer.querySelectorAll(".popular-question-option");
+
+    questionOptions.forEach(function(option) {
+
+        const isSelected = option.dataset.question === selectedPopularQuestion;
+
+        option.classList.toggle("selected", isSelected);
+
+        option.setAttribute("aria-pressed", String(isSelected));
+
+    });
+
+}
+
+function updateContinueButton() {
+
+    continueTopicButton.disabled = customQuestionInput.value.trim() === "";
+
+}
+
+function syncQuestionInput() {
+
+    customQuestionInput.value = questionText;
+
+    updateContinueButton();
+
+}
+
+function renderTopics() {
+
+    const topics = PRAGYA_CONFIG.TOPICS_BY_JOURNEY[selectedJourney] || [];
+
+    topicOptionsContainer.replaceChildren();
+
+    topics.forEach(function(topic) {
+
+        const option = document.createElement("button");
+
+        option.type = "button";
+
+        option.className = "topic-option";
+
+        option.dataset.topic = topic;
+
+        option.textContent = topic;
+
+        option.setAttribute("aria-pressed", "false");
+
+        option.addEventListener("click", function() {
+
+            selectedSuggestedTopic = topic;
+
+            selectedPopularQuestion = null;
+
+            questionText = topic;
+
+            syncQuestionInput();
+
+            clearPragyaResponse();
+
+            updateTopicSelection();
+
+            updatePopularQuestionSelection();
+
+        });
+
+        topicOptionsContainer.appendChild(option);
+
+    });
+
+    updateTopicSelection();
+
+}
+
+function renderPopularQuestions() {
+
+    const questionsByJourney = PRAGYA_CONFIG.POPULAR_QUESTIONS[selectedJourney] || {};
+
+    const questions = questionsByJourney[selectedPersona] || [];
+
+    popularQuestionOptionsContainer.replaceChildren();
+
+    questions.forEach(function(question) {
+
+        const option = document.createElement("button");
+
+        option.type = "button";
+
+        option.className = "popular-question-option";
+
+        option.dataset.question = question;
+
+        option.textContent = question;
+
+        option.setAttribute("aria-pressed", "false");
+
+        option.addEventListener("click", function() {
+
+            selectedPopularQuestion = question;
+
+            selectedSuggestedTopic = null;
+
+            questionText = question;
+
+            syncQuestionInput();
+
+            clearPragyaResponse();
+
+            updatePopularQuestionSelection();
+
+            updateTopicSelection();
+
+        });
+
+        popularQuestionOptionsContainer.appendChild(option);
+
+    });
+
+    updatePopularQuestionSelection();
+
+}
+
+function renderTopicDiscovery() {
+
+    renderTopics();
+
+    renderPopularQuestions();
+
+    syncQuestionInput();
+
+}
+
+journeyOptions.forEach(function(option) {
+
+    option.setAttribute("aria-pressed", "false");
+
+    option.addEventListener("click", function() {
+
+        const nextJourney = option.dataset.journey;
+
+        if (selectedJourney !== nextJourney) {
+
+            selectedPersona = null;
+
+            selectedTopic = null;
+
+            selectedSuggestedTopic = null;
+
+            selectedPopularQuestion = null;
+
+            questionText = "";
+
+            clearPragyaResponse();
+
+        }
+
+        selectedJourney = nextJourney;
+
+        currentStep = "persona";
+
+        updateJourneySelection();
+
+        updatePersonaSelection();
+
+        renderStep();
+
+    });
+
+});
+
+personaOptions.forEach(function(option) {
+
+    option.setAttribute("aria-pressed", "false");
+
+    option.addEventListener("click", function() {
+
+        const nextPersona = option.dataset.persona;
+
+        if (selectedPersona !== nextPersona) {
+
+            selectedTopic = null;
+
+            selectedSuggestedTopic = null;
+
+            selectedPopularQuestion = null;
+
+            questionText = "";
+
+            clearPragyaResponse();
+
+        }
+
+        selectedPersona = nextPersona;
+
+        currentStep = "topic";
+
+        updatePersonaSelection();
+
+        renderTopicDiscovery();
+
+        renderStep();
+
+    });
+
+});
+
+backToWelcomeButton.addEventListener("click", function() {
+
+    currentStep = "welcome";
+
+    renderStep();
+
+    updateJourneySelection();
+
+});
+
+backToPersonaButton.addEventListener("click", function() {
+
+    currentStep = "persona";
+
+    renderStep();
+
+    updatePersonaSelection();
+
+});
+
+customQuestionInput.addEventListener("input", function() {
+
+    questionText = customQuestionInput.value;
+
+    clearPragyaResponse();
+
+    updateContinueButton();
+
+});
+
+continueTopicButton.addEventListener("click", async function() {
+
+    const finalQuestion = customQuestionInput.value.trim();
+
+    if (finalQuestion === "") return;
+
+    selectedTopic = finalQuestion;
+
+    questionText = customQuestionInput.value;
+
+    conversationContext = buildConversationContext(finalQuestion);
+
+    updateContinueButton();
+
+    if (!conversationContext.domainAllowed) {
+
+        showPragyaResponse("I am designed to help you learn and use Artificial Intelligence. Please ask me an AI-related question.", true);
+
+        return;
+
+    }
+
+    showPragyaResponse("Loading...", false);
+
+    continueTopicButton.disabled = true;
+
+    try {
+
+        const data = await callPragyaAPI(conversationContext);
+
+        handleApiResponse(data);
+
+    } catch (error) {
+
+        handleApiError();
+
+    } finally {
+
+        updateContinueButton();
+
+    }
+
+});
+
+renderStep();
+
+</script>
