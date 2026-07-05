@@ -5,6 +5,7 @@ substitutions:
   _IMAGE_NAME: pragya-api
   _PRAGYA_CHAT_MODEL: gpt-4.1-mini
   _OPENAI_API_KEY_SECRET: pragya-openai-api-key
+  _RUNTIME_SERVICE_ACCOUNT: pragya-runtime@ainews9-pragya.iam.gserviceaccount.com
 
 steps:
   - name: gcr.io/cloud-builders/docker
@@ -36,6 +37,8 @@ steps:
       - ${_REGION}
       - --platform
       - managed
+      - --service-account
+      - ${_RUNTIME_SERVICE_ACCOUNT}
       - --allow-unauthenticated
       - --port
       - "8080"
