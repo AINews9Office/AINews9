@@ -1,7 +1,7 @@
 window.PRAGYA_CONFIG = {
-    VERSION: "0.1.0",
-    ENVIRONMENT: "Development",
-    API_URL: "http://127.0.0.1:8000",
+    VERSION: "1.0.0",
+    ENVIRONMENT: "beta",
+    API_URL: "https://ainews9-pragya-api.onrender.com",
     API_TIMEOUT_MS: 15000,
     DEFAULT_PILLAR: "Learn AI",
     TOPICS_BY_JOURNEY: {

@@ -4,15 +4,44 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pragya Widget</title>
-<link rel="stylesheet" href="style.css">
+<script>
+const PRAGYA_WIDGET_VERSION = "1.0.0";
+
+function pragyaAssetUrl(path) {
+
+    return path + "?v=" + encodeURIComponent(PRAGYA_WIDGET_VERSION);
+
+}
+
+document.write('<link rel="icon" type="image/png" sizes="16x16" href="' + pragyaAssetUrl("assets/favicon-16.png") + '">');
+document.write('<link rel="icon" type="image/png" sizes="32x32" href="' + pragyaAssetUrl("assets/favicon-32.png") + '">');
+document.write('<link rel="stylesheet" href="' + pragyaAssetUrl("style.css") + '">');
+</script>
 </head>
 <body>
-<div id="chat">
-<div class="header">Pragya <small>Powered by AINews9</small></div>
+<button type="button" id="pragya-launcher" class="pragya-launcher" aria-label="Open Pragya AI Learning Guide" aria-controls="chat" aria-expanded="false" hidden>
+<img class="launcher-avatar" data-pragya-src="assets/launcher-icon.png" alt="" aria-hidden="true">
+</button>
+<main class="pragya-shell">
+<div id="chat" class="pragya-card" aria-label="Pragya AI Learning Guide">
+<header class="header">
+<div class="brand-mark">
+<img data-pragya-src="assets/pragya-logo.png" alt="Pragya">
+</div>
+<div class="header-copy">
+<h1>Pragya</h1>
+<p class="header-subtitle">Your AI Learning Guide</p>
+<p class="header-tagline">Making AI Simple, Useful &amp; Safe for Every Indian</p>
+<p class="status" aria-label="Pragya is online"><span class="status-dot" aria-hidden="true"></span>Online</p>
+</div>
+</header>
 <div id="messages">
 <section id="welcome-step" class="welcome" aria-labelledby="welcome-title">
-<p id="welcome-title" class="welcome-title">Hello! I'm Pragya, your AI Learning Companion.</p>
-<p class="welcome-intro">I can help you learn AI, discover AI tools, stay safe online and grow your AI skills.</p>
+<div class="welcome-avatar-wrap">
+<img class="welcome-avatar" data-pragya-src="assets/pragya-avatar.png" alt="Pragya AI Learning Guide">
+</div>
+<p id="welcome-title" class="welcome-title">Hello!<br>I'm Pragya,<br>your AI Learning Guide.</p>
+<p class="welcome-intro">I can help you</p>
 <div class="journey-options" aria-label="Choose your AI journey">
 <button type="button" class="journey-option" data-journey="Learn AI">Learn AI</button>
 <button type="button" class="journey-option" data-journey="Use AI">Use AI</button>
@@ -48,7 +77,16 @@
 </section>
 </div>
 </div>
-<script src="config.js"></script>
-<script src="app.js"></script>
+</main>
+<script>
+document.querySelectorAll("[data-pragya-src]").forEach(function(asset) {
+
+    asset.src = pragyaAssetUrl(asset.getAttribute("data-pragya-src"));
+
+});
+
+document.write('<script src="' + pragyaAssetUrl("config.js") + '"><\/script>');
+document.write('<script src="' + pragyaAssetUrl("app.js") + '"><\/script>');
+</script>
 </body>
 </html>
