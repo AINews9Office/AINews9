@@ -1,3 +1,5 @@
+import logging
+
 from openai import OpenAI
 
 from app.config import OPENAI_API_KEY
@@ -11,6 +13,31 @@ from app.memory_service import memory_service
 from app.domain_guard import domain_guard
 
 client = OpenAI(api_key=OPENAI_API_KEY)
+logger = logging.getLogger(__name__)
+
+
+def log_stage_start(stage: str, session_id: str):
+
+    logger.info(
+        "pragya_stage_start",
+        extra={
+            "stage": stage,
+            "session_id": session_id
+        }
+    )
+
+
+def log_stage_exception(stage: str, session_id: str, exc: Exception):
+
+    logger.exception(
+        "pragya_stage_failed",
+        extra={
+            "stage": stage,
+            "session_id": session_id,
+            "exception_class": exc.__class__.__name__,
+            "exception_message": str(exc)
+        }
+    )
 
 
 def ask_pragya(session_id: str, question: str):
@@ -19,21 +46,43 @@ def ask_pragya(session_id: str, question: str):
     # DOMAIN GUARD
     # =====================================
 
-    if not domain_guard.is_ai_question(question):
+    stage = "Domain Guard"
+    log_stage_start(stage, session_id)
 
-        return {
-            "session_id": session_id,
-            "persona": "General Learner",
-            "answer": domain_guard.reject()
-        }
+    try:
+
+        is_ai_question = domain_guard.is_ai_question(question)
+
+        if not is_ai_question:
+
+            stage = "Response Return"
+            log_stage_start(stage, session_id)
+
+            return {
+                "session_id": session_id,
+                "persona": "General Learner",
+                "answer": domain_guard.reject()
+            }
+
+    except Exception as exc:
+
+        log_stage_exception(stage, session_id, exc)
+
+        raise
+
 
     # =====================================
     # PERSONA
     # =====================================
 
-    persona = persona_service.detect(question)
+    stage = "Persona Detection"
+    log_stage_start(stage, session_id)
 
-    persona_instruction = f"""
+    try:
+
+        persona = persona_service.detect(question)
+
+        persona_instruction = f"""
 The user belongs to this persona:
 
 {persona}
@@ -62,38 +111,82 @@ General Learner:
 Use simple beginner-friendly explanations.
 """
 
+    except Exception as exc:
+
+        log_stage_exception(stage, session_id, exc)
+
+        raise
+
     # =====================================
     # KNOWLEDGE
     # =====================================
 
-    recommendation = get_recommendation(question)
+    stage = "Recommendation"
+    log_stage_start(stage, session_id)
 
-    knowledge_context = knowledge_service.build_context(question)
+    try:
+
+        recommendation = get_recommendation(question)
+
+    except Exception as exc:
+
+        log_stage_exception(stage, session_id, exc)
+
+        raise
+
+    stage = "Knowledge Context"
+    log_stage_start(stage, session_id)
+
+    try:
+
+        knowledge_context = knowledge_service.build_context(question)
+
+    except Exception as exc:
+
+        log_stage_exception(stage, session_id, exc)
+
+        raise
 
     # =====================================
     # MEMORY
     # =====================================
 
-    history = memory_service.get_history(session_id)
+    stage = "Memory Load"
+    log_stage_start(stage, session_id)
 
-    messages = []
+    try:
 
-    for msg in history:
+        history = memory_service.get_history(session_id)
+
+        messages = []
+
+        for msg in history:
+            messages.append(
+                {
+                    "role": msg["role"],
+                    "content": msg["content"]
+                }
+            )
+
         messages.append(
             {
-                "role": msg["role"],
-                "content": msg["content"]
+                "role": "user",
+                "content": question
             }
         )
 
-    messages.append(
-        {
-            "role": "user",
-            "content": question
-        }
-    )
+    except Exception as exc:
 
-    instructions = f"""
+        log_stage_exception(stage, session_id, exc)
+
+        raise
+
+    stage = "OpenAI Request"
+    log_stage_start(stage, session_id)
+
+    try:
+
+        instructions = f"""
 {SYSTEM_PROMPT}
 
 You are Pragya, the AI Learning Assistant of AINews9.
@@ -130,56 +223,95 @@ Rules
 8. If the user asks in Hindi, answer in Hindi.
 """
 
-    response = client.responses.create(
+        response = client.responses.create(
 
-        model=PRAGYA_CHAT_MODEL,
+            model=PRAGYA_CHAT_MODEL,
 
-        instructions=instructions,
+            instructions=instructions,
 
-        input=messages
+            input=messages
 
-    )
+        )
 
-    answer = response.output_text
+    except Exception as exc:
 
-    memory_service.add_message(
-        session_id,
-        "user",
-        question
-    )
+        log_stage_exception(stage, session_id, exc)
 
-    memory_service.add_message(
-        session_id,
-        "assistant",
-        answer
-    )
+        raise
 
-    result = {
+    stage = "OpenAI Response"
+    log_stage_start(stage, session_id)
 
-        "session_id": session_id,
+    try:
 
-        "persona": persona,
+        answer = response.output_text
 
-        "answer": answer
+    except Exception as exc:
 
-    }
+        log_stage_exception(stage, session_id, exc)
 
-    if recommendation:
+        raise
 
-        current = recommendation["current"]
+    stage = "Memory Save"
+    log_stage_start(stage, session_id)
 
-        result["continue_learning"] = {
+    try:
 
-            "article_id": current["id"],
+        memory_service.add_message(
+            session_id,
+            "user",
+            question
+        )
 
-            "title": current["title"],
+        memory_service.add_message(
+            session_id,
+            "assistant",
+            answer
+        )
 
-            "difficulty": current["difficulty"],
+    except Exception as exc:
 
-            "reading_time": current["reading_time"],
+        log_stage_exception(stage, session_id, exc)
 
-            "url": current["url"]
+        raise
+
+    stage = "Response Return"
+    log_stage_start(stage, session_id)
+
+    try:
+
+        result = {
+
+            "session_id": session_id,
+
+            "persona": persona,
+
+            "answer": answer
 
         }
 
-    return result
+        if recommendation:
+
+            current = recommendation["current"]
+
+            result["continue_learning"] = {
+
+                "article_id": current["id"],
+
+                "title": current["title"],
+
+                "difficulty": current["difficulty"],
+
+                "reading_time": current["reading_time"],
+
+                "url": current["url"]
+
+            }
+
+        return result
+
+    except Exception as exc:
+
+        log_stage_exception(stage, session_id, exc)
+
+        raise
