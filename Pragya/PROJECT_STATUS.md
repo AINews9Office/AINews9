@@ -134,6 +134,7 @@ Approved Product Decisions:
 | Capability | Status |
 |------------|--------|
 | C-021 AI News Service (Cloud Run) | Implemented, deployed, and validated |
+| C-022 Cloud Build Path-Filtered Deployment Triggers | Planned |
 
 Production endpoint:
 
