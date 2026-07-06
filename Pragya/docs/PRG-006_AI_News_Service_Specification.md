@@ -113,6 +113,8 @@ Backward compatibility requirements:
 - Do not remove existing response fields.
 - Do not change field types expected by the WordPress frontend.
 - Do not require WordPress frontend changes beyond the API base URL.
+- Returned articles should be filtered for AI relevance using article title, description, and content.
+- Results from configured news providers should be merged in a balanced way so one provider cannot consume the full response when multiple providers return relevant articles.
 
 The migration is considered compatible only when the existing WordPress frontend can switch from the Render base URL to the Cloud Run base URL without additional frontend logic changes.
 
