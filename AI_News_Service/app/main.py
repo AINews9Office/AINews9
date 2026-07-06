@@ -1,5 +1,6 @@
 import logging
 import os
+import re
 from typing import Any
 
 import requests
@@ -15,8 +16,41 @@ logger = logging.getLogger("ai_news_service")
 
 REQUEST_TIMEOUT_SECONDS = float(os.getenv("NEWS_REQUEST_TIMEOUT_SECONDS", "20"))
 MAX_ARTICLES = int(os.getenv("NEWS_MAX_ARTICLES", "18"))
-NEWS_QUERY = os.getenv("NEWS_QUERY", "artificial intelligence OR AI")
-GNEWS_QUERY = os.getenv("GNEWS_QUERY", "artificial intelligence")
+DEFAULT_NEWS_QUERY = (
+    '"artificial intelligence" OR "machine learning" OR "generative AI" '
+    'OR "large language model" OR ChatGPT OR OpenAI OR Anthropic OR DeepMind'
+)
+DEFAULT_GNEWS_QUERY = (
+    '"artificial intelligence" OR "machine learning" OR "generative AI" '
+    "OR ChatGPT OR OpenAI OR Anthropic"
+)
+NEWS_QUERY = os.getenv("NEWS_QUERY", DEFAULT_NEWS_QUERY)
+GNEWS_QUERY = os.getenv("GNEWS_QUERY", DEFAULT_GNEWS_QUERY)
+AI_RELEVANCE_TERMS = (
+    "artificial intelligence",
+    "machine learning",
+    "generative ai",
+    "large language model",
+    "language model",
+    "llm",
+    "chatgpt",
+    "openai",
+    "anthropic",
+    "deepmind",
+    "neural network",
+    "ai governance",
+    "ai model",
+    "ai tool",
+    "ai system",
+    "ai startup",
+    "ai investment",
+    "ai research",
+    "ai safety",
+    "ai ethics",
+    "ai skills",
+    "ai-led",
+    "artificial-intelligence",
+)
 
 NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 GNEWS_API_KEY = os.getenv("GNEWS_API_KEY")
@@ -47,17 +81,18 @@ def health() -> dict[str, str]:
 
 @app.get("/api/news")
 def get_news() -> dict[str, list[dict[str, Any]]]:
-    articles: list[dict[str, Any]] = []
+    newsapi_articles: list[dict[str, Any]] = []
+    gnews_articles: list[dict[str, Any]] = []
 
     if NEWS_API_KEY:
         try:
-            articles.extend(fetch_newsapi_articles())
+            newsapi_articles = fetch_newsapi_articles()
         except requests.RequestException:
             logger.exception("news_provider_failed provider=newsapi")
 
     if GNEWS_API_KEY:
         try:
-            articles.extend(fetch_gnews_articles())
+            gnews_articles = fetch_gnews_articles()
         except requests.RequestException:
             logger.exception("news_provider_failed provider=gnews")
 
@@ -68,7 +103,7 @@ def get_news() -> dict[str, list[dict[str, Any]]]:
             detail="No news provider is configured.",
         )
 
-    articles = deduplicate_articles(articles)
+    articles = merge_balanced_articles(newsapi_articles, gnews_articles)
 
     if not articles:
         logger.error("news_empty_response")
@@ -77,7 +112,7 @@ def get_news() -> dict[str, list[dict[str, Any]]]:
             detail="Unable to load AI news.",
         )
 
-    return {"news": articles[:MAX_ARTICLES]}
+    return {"news": articles}
 
 
 def fetch_newsapi_articles() -> list[dict[str, Any]]:
@@ -101,7 +136,11 @@ def fetch_newsapi_articles() -> list[dict[str, Any]]:
         return []
 
     logger.info("news_provider_success provider=newsapi count=%s", len(articles))
-    return [normalize_newsapi_article(article) for article in articles]
+    return [
+        normalize_newsapi_article(article)
+        for article in articles
+        if is_ai_relevant(article)
+    ]
 
 
 def fetch_gnews_articles() -> list[dict[str, Any]]:
@@ -124,7 +163,56 @@ def fetch_gnews_articles() -> list[dict[str, Any]]:
         return []
 
     logger.info("news_provider_success provider=gnews count=%s", len(articles))
-    return [normalize_gnews_article(article) for article in articles]
+    return [
+        normalize_gnews_article(article)
+        for article in articles
+        if is_ai_relevant(article)
+    ]
+
+
+def is_ai_relevant(article: dict[str, Any]) -> bool:
+    text = " ".join(
+        str(article.get(field) or "")
+        for field in ("title", "description", "content")
+    ).lower()
+    if re.search(r"\bai\b", text):
+        return True
+    return any(term in text for term in AI_RELEVANCE_TERMS)
+
+
+def merge_balanced_articles(
+    newsapi_articles: list[dict[str, Any]],
+    gnews_articles: list[dict[str, Any]],
+    limit: int = MAX_ARTICLES,
+) -> list[dict[str, Any]]:
+    merged: list[dict[str, Any]] = []
+    seen_urls: set[str] = set()
+    providers = [newsapi_articles, gnews_articles]
+    positions = [0, 0]
+
+    while len(merged) < limit and any(
+        positions[index] < len(provider)
+        for index, provider in enumerate(providers)
+    ):
+        added_this_round = False
+        for index, provider in enumerate(providers):
+            while positions[index] < len(provider):
+                article = provider[positions[index]]
+                positions[index] += 1
+                url = article.get("url")
+                title = article.get("title")
+                if not url or not title or url in seen_urls:
+                    continue
+                seen_urls.add(url)
+                merged.append(article)
+                added_this_round = True
+                break
+            if len(merged) >= limit:
+                break
+        if not added_this_round:
+            break
+
+    return merged
 
 
 def normalize_newsapi_article(article: dict[str, Any]) -> dict[str, Any]:
@@ -153,20 +241,3 @@ def normalize_gnews_article(article: dict[str, Any]) -> dict[str, Any]:
         "source": article.get("source") or {"name": "Unknown Source"},
         "urlToImage": image,
     }
-
-
-def deduplicate_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    seen_urls: set[str] = set()
-    deduplicated: list[dict[str, Any]] = []
-
-    for article in articles:
-        url = article.get("url")
-        title = article.get("title")
-        if not url or not title:
-            continue
-        if url in seen_urls:
-            continue
-        seen_urls.add(url)
-        deduplicated.append(article)
-
-    return deduplicated
