@@ -50,6 +50,14 @@ Configure the Cloud Build trigger with:
 - Branch: `main`
 - Build config path: `AI_News_Service/cloudbuild.yaml`
 - Service account: `pragya-build@ainews9-pragya.iam.gserviceaccount.com`
+- Included files:
+  - `AI_News_Service/cloudbuild.yaml`
+  - `AI_News_Service/Dockerfile`
+  - `AI_News_Service/.dockerignore`
+  - `AI_News_Service/app/**`
+  - `AI_News_Service/requirements.txt`
+
+Documentation-only changes should not trigger the AI News Service deployment.
 
 The deployment flow is:
 

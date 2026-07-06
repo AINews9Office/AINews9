@@ -66,6 +66,14 @@ Recommended trigger configuration:
 - Branch: `main`
 - Configuration file: `cloudbuild.yaml`
 - Location: Repository root
+- Included files:
+  - `cloudbuild.yaml`
+  - `Dockerfile`
+  - `.dockerignore`
+  - `Pragya/app/**`
+  - `Pragya/requirements.txt`
+
+Documentation-only changes should not trigger the Pragya production deployment.
 
 Required trigger substitutions may use the defaults in `cloudbuild.yaml` or override them:
 
