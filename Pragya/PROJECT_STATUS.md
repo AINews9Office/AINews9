@@ -129,6 +129,26 @@ Approved Product Decisions:
 
 ---
 
+# Platform Capability Status
+
+| Capability | Status |
+|------------|--------|
+| C-021 AI News Service (Cloud Run) | Implemented, deployed, and validated |
+
+Production endpoint:
+
+```text
+https://ai-news-service-888659608106.asia-south1.run.app
+```
+
+Validation:
+
+- `GET /health` returned HTTP 200 on July 6, 2026.
+- `GET /api/news` returned HTTP 200 with a valid `news` array on July 6, 2026.
+- The `/api/news` response contract remains unchanged.
+
+---
+
 # Current Repository State
 
 Repository Health:

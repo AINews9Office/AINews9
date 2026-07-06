@@ -3,7 +3,7 @@
 
 **Version:** 1.0
 
-**Status:** Planned
+**Status:** Implemented
 
 **Owner:** AINews9 Engineering
 
@@ -94,6 +94,12 @@ Target characteristics:
 - Shared GCP project and infrastructure standards.
 - Environment-specific configuration outside source code.
 - Secret Manager usage for production secrets where required.
+
+Production service:
+
+```text
+https://ai-news-service-888659608106.asia-south1.run.app
+```
 
 ---
 
@@ -226,14 +232,22 @@ The migration is complete when:
 - Cloud Run logs and monitoring are available.
 - Rollback path is verified.
 
+Production validation:
+
+- Cloud Run service `ai-news-service` is deployed in `asia-south1`.
+- Production endpoint is operational at `https://ai-news-service-888659608106.asia-south1.run.app`.
+- `GET /health` returned HTTP 200 on July 6, 2026.
+- `GET /api/news` returned HTTP 200 with a valid `news` array on July 6, 2026.
+- The `/api/news` response contract remains unchanged.
+
 ---
 
 # Document Status
 
-Status: Planned
+Status: Implemented
 
 Version: 1.0
 
 Approved By: Product Owner
 
-Next Review: Before AI News Service implementation
+Next Review: After production monitoring review
